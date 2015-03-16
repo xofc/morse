@@ -1,5 +1,6 @@
 #define DOT	100	/* ms */
-#define PIN	8	/* output pin */
+#define BUZZER	8	/* output pin */
+#define SYSTEM_LED 13	/* output pin */
 
 char *alphas[] = {
 		"._", "_...", "_._.", "_..", ".",	/* A-E */
@@ -20,11 +21,11 @@ void silence(int n)
 	}
 void beep(int n)
 	{
-	digitalWrite(13, HIGH);
-	digitalWrite(PIN, HIGH);
+	digitalWrite(SYSTEM_LED, HIGH);
+	digitalWrite(BUZZER, HIGH);
 	delay(n * DOT);
-	digitalWrite(PIN, LOW);
-	digitalWrite(13, LOW);
+	digitalWrite(BUZZER, LOW);
+	digitalWrite(SYSTEM_LED, LOW);
 	}
 void send_c(char *str)
 	{
@@ -55,6 +56,8 @@ void send_s(char *str)
 	}
 void setup()
 	{
+	pinMode(BUZZER, OUTPUT);
+	pinMode(SYSTEM_LED, OUTPUT);
 	}
 void loop()
 	{

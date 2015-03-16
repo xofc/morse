@@ -10,8 +10,9 @@ DOT is the duration in milliseconds of a 'dot'; a 'dash' is 3 dots;
 there is a 'dot' silence between dots and dashes, 3 dot silence between letters;
 7 dot silence between words.
 
-ref: https://en.wikipedia.org/wiki/Morse_code
-https://commons.wikimedia.org/wiki/File:International_Morse_Code.svg
+ref:
+* https://en.wikipedia.org/wiki/Morse_code
+* https://commons.wikimedia.org/wiki/File:International_Morse_Code.svg
 
 The 'silences' implementation is a little bit tricky
 as a dot/dash (beep(duration)) is unconditionaly followed by a silence(1).
